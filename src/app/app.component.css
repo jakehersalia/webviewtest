@@ -1,0 +1,11 @@
+.content-wrapper {
+  overflow: hidden;
+  height: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+video {
+  height: 450px;
+  width: 100%;
+}

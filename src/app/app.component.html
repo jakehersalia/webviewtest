@@ -1,20 +1,47 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="content-wrapper">
+  <video autoplay loop>
+    <source src="/assets/test-video.mp4" type="video/mp4">
+  </video>
 
+  <hr>
+  <section>
+    <h4> Cookie Test </h4>
+    <ng-container *ngIf="cookieSaved; else notSavedContent">
+      <p style="color: green;">
+        I will show if your cookie is saved
+      </p>
+    </ng-container>
+
+    <p *ngIf="isCookieContentShowed"> {{cookieObject}}</p>
+
+    <ng-template #notSavedContent>
+      <p style="color: red;"> No cookie has been saved, please click the save
+        button </p>
+    </ng-template>
+    <button style=" border: 1px solid black; padding: 10px 15px;" (click)="saveCookie()"> Save Cookie </button>
+    <br>
+    <br>
+    <button style=" border: 1px solid black; padding: 10px 15px;" (click)="showCookieContent()"> Show Cookie
+      Content</button>
+    <br>
+    <br>
+    <button style=" border: 1px solid black; padding: 10px 15px;" (click)="deleteCookie()"> Delete Cookie </button>
+  </section>
+
+  <hr>
+  <section>
+    <h4> New Tab View Links</h4>
+    <a href="https://css-test.idfyed.com/" target="_blank"> Secured: Idfyed CSS</a>
+    <br>
+    <br>
+    <a href="http://go.com/" target="_blank"> Unsecured : Go.com</a>
+  </section>
+
+  <section>
+    <h4> Same Tab View Links</h4>
+    <a href="https://css-test.idfyed.com/"> Secured: Idfyed CSS</a>
+    <br>
+    <br>
+    <a href="http://go.com/"> Unsecured : Go.com</a>
+  </section>
+</div>
