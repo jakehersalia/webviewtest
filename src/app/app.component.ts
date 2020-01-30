@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { CookieService } from 'ngx-cookie';
 
 @Component({
@@ -7,11 +7,13 @@ import { CookieService } from 'ngx-cookie';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  @ViewChild('videoPlayer') videoPlayer: ElementRef<HTMLVideoElement>;
   cookieSaved = false;
   cookieObject: any;
   isCookieContentShowed = false;
 
-  constructor(private cookie: CookieService) { }
+
+  constructor(private cookie: CookieService, private element: ElementRef) { }
 
   ngOnInit() {
     if (this.cookie.get('cookie_saved')) {
@@ -19,6 +21,7 @@ export class AppComponent implements OnInit {
         this.cookieSaved = true;
       }
     }
+    // this.videoPlayer.nativeElement.autoplay = true;
   }
 
   saveCookie() {
